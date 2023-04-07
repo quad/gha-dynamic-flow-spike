@@ -1,0 +1,9 @@
+name: toplevel build
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh workflow run sub-ok.yml --ref ${{ github.ref }}
+      - run: gh workflow run sub-fail.yml --ref ${{ github.ref }}
