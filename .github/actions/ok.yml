@@ -1,0 +1,6 @@
+name: OK build
+
+runs:
+  using: composite
+  steps:
+    - run: echo OK

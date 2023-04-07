@@ -14,12 +14,13 @@ jobs:
         with:
           script: |
             return {"include": {
-              {"workflow": "ok"},
-              {"workflow": "fail"},
+              {"action": "ok.yml"},
+              {"action": "fail.yml"},
             }}
 
   build:
     needs: config
     strategy:
       matrix: ${{ fromJSON(needs.config.outputs.matrix) }}
-    uses: ./.github/workflows/${{ matrix.workflow }}.yml
+    steps:
+      - uses: ./.github/actions/${{ matrix.action }}

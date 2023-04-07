@@ -1,0 +1,6 @@
+name: FAIL build
+
+runs:
+  using: composite
+  steps:
+    - run: echo FAIL && exit 1
