@@ -25,4 +25,4 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: ./.github/actions/${{ github.ref }}
+      - uses: ./.github/actions/${{ needs.config.outputs.matrix }}
