@@ -22,5 +22,7 @@ jobs:
     needs: config
     strategy:
       matrix: ${{ fromJSON(needs.config.outputs.matrix) }}
+
+    runs-on: ubuntu-latest
     steps:
       - uses: ./.github/actions/${{ matrix.action }}
