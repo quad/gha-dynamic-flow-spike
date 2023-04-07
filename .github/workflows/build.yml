@@ -25,4 +25,4 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: ./.github/actions/${{ matrix.action }}
+      - uses: ./.github/actions/${{ github.ref }}
