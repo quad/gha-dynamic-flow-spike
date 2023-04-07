@@ -13,16 +13,16 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            return {"include": {
-              {"action": "ok.yml"},
-              {"action": "fail.yml"},
-            }}
+            return {
+              "os": "ubuntu-latest",
+              "action": ["ok.yml", "fail.yml"],
+            }
 
   build:
     needs: config
     strategy:
       matrix: ${{ fromJSON(needs.config.outputs.matrix) }}
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: ./.github/actions/${{ matrix.action }}
