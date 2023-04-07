@@ -22,4 +22,4 @@ jobs:
     needs: config
     strategy:
       matrix: ${{ fromJSON(needs.config.outputs.matrix) }}
-    uses: ${{ matrix.workflow }}
+    uses: ./.github/workflows/${{ matrix.workflow }}
