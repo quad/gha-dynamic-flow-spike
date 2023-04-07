@@ -1,4 +1,4 @@
-name: subflow
+name: FAIL subflow
 on: workflow_dispatch
 
 jobs:

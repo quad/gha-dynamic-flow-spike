@@ -1,4 +1,4 @@
-name: subflow
+name: OK subflow
 on: workflow_dispatch
 
 jobs:
