@@ -9,5 +9,6 @@ jobs:
       GH_TOKEN: ${{ github.token }}
 
     steps:
+      - uses: actions/checkout@v3
       - run: gh workflow run sub-ok.yml --ref ${{ github.ref }}
       - run: gh workflow run sub-fail.yml --ref ${{ github.ref }}
